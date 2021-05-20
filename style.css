@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root {
+    /* Primary */
+    --magenta-600: hsl(300, 43%, 22%);
+    --pink-200: hsl(333, 80%, 67%);
+    /* Neutral */
+    --gray-magenta-300: hsl(303, 10%, 53%);
+    --gray-magenta-100: hsl(300, 24%, 96%);
+    --white-100: hsl(0, 0%, 100%);
+    /* Typography */
+    --ff: 'Spartan', sans-serif;
+    --fs: 15px;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
