@@ -33,7 +33,6 @@ body {
 
 section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90%;
@@ -41,7 +40,11 @@ section {
 }
 
 .section-ratings {
-    
+    flex-direction: column;
+}
+
+.section-ratings > * {
+    max-width: 600px;
 }
 
 .section-ratings header {
@@ -75,7 +78,9 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    text-align: center;
+    width: inherit;
+    max-width: 450px;
     border-radius: 10px;
     background-color: var(--gray-magenta-100);
     gap: 1rem;
@@ -91,11 +96,12 @@ section {
 
 .rating.best-tech {
     align-self: flex-end;
-}
+} 
 
 .rating figcaption {
     font-weight: var(--fw-bold);
     font-size: .8rem;
+    height: auto;
 }
 
 .rating-stars {
@@ -104,10 +110,13 @@ section {
 }
 
 .section-testimonials {
+    flex-flow: row wrap;
     margin-top: 2rem;
 }
 
 .card {
+    flex: 1;
+
     color: var(--gray-magenta-100);
     background-color: var(--magenta-600);
     border-radius: 10px;
@@ -116,11 +125,13 @@ section {
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
+    
 }
 
 .card .profile {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     gap: 1.5rem;
 }
 
@@ -164,10 +175,87 @@ section {
     font-size: 0.8rem;
     line-height: 1.3rem;
     font-weight: var(--fw-medium);
-    width: 25ch;
+    min-width: 25ch;
 }
 
+@media screen and (min-width: 400px) {
+    .ratings .rating {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
 
+    .rating-stars {
+        margin-left: 2rem;
+    }
+
+    .rating figcaption {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 671px) {
+    .section-ratings header {
+        text-align: center;
+    }
+
+    .section-ratings header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        max-width: 12ch;
+    }
+
+    .section-ratings header p {
+        max-width: 40ch;
+    }
+
+    .section-ratings {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .ratings .rating {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .rating-stars,
+    .rating figcaption {
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .section-ratings {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .ratings .rating {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .rating-stars,
+    .rating figcaption {
+        margin: 0;
+    }
+
+    .rating-stars {
+        margin-left: 2rem;
+    }
+
+    .rating figcaption {
+        margin-right: 2rem;
+    }
+
+    .card .testimonial {
+        
+    }
+}
 
 .attribution {
   font-size: 11px;
