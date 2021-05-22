@@ -386,12 +386,12 @@ section {
     .section-testimonials {
         flex-flow: row nowrap;
         justify-content: space-between;
-        height: 260px;
+        height: 240px;
     }
 
     .card {
         padding: 2rem;
-        height: 230px;
+        height: 210px;
         width: unset;
         max-width: 28ch;
     }
