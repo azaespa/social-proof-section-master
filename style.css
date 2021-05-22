@@ -23,11 +23,21 @@ body {
     font-size: var(--fs);
     font-weight: var(--fw-regular);
     color: var(--magenta-600);
+    min-height: 100vh;
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 4rem 0;
+}
+
+main {
+    margin: 4rem 0;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -35,16 +45,16 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    gap: 1rem;
 }
 
 .section-ratings {
     flex-direction: column;
+    width: 100%;
+    gap: 2.5rem;
 }
 
 .section-ratings > * {
-    max-width: 600px;
+    max-width: 550px;
 }
 
 .section-ratings header {
@@ -58,6 +68,7 @@ section {
 }
 
 .section-ratings header p {
+    margin-bottom: 0;
     color: var(--gray-magenta-300);
 }
 
@@ -110,12 +121,16 @@ section {
 }
 
 .section-testimonials {
+    margin-top: 1.5rem;
     flex-flow: row wrap;
-    margin-top: 2rem;
+    width: 100%;
+    gap: 1rem;
 }
 
 .card {
     flex: 1;
+    box-sizing: border-box;
+    margin: 0;
 
     color: var(--gray-magenta-100);
     background-color: var(--magenta-600);
@@ -145,8 +160,8 @@ section {
 }
 
 .picture img {
-    width: 100%;
-    height: 100%;
+    width: 40px;
+    height: 40px;
 }
 
 .profile .info {
@@ -159,10 +174,6 @@ section {
 .info > * {
     margin: 0;
     font-size: .8rem;
-}
-
-.info .full-name {
-    
 }
 
 .info .buyer-status {
@@ -195,6 +206,10 @@ section {
 }
 
 @media screen and (min-width: 671px) {
+    main {
+        padding: 4rem 0;
+    }
+
     .section-ratings header {
         text-align: center;
     }
@@ -226,36 +241,103 @@ section {
     }
 }
 
-@media screen and (min-width: 870px) {
+@media screen and (min-width: 888px) {
+    main {
+        width: 80%;
+        margin: 0;
+    }
+
     .section-ratings {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-    .ratings .rating {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 1rem;
+    .section-ratings header {
+        text-align: left;
     }
 
-    .rating-stars,
+    .section-ratings header p {
+        max-width: 36ch;
+    }
+
+    .section-testimonials {
+        flex-flow: row nowrap;
+        height: 228px;
+    }
+
+    .card {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1.5rem;
+        height: 100%;
+        width: 15ch;
+    }
+
+    .card .testimonial {
+        font-size: .6rem;
+        font-size: 1vw;
+        width: inherit;
+    }
+
+}
+
+@media screen and (min-width: 1176px) {
+    main {
+        padding: 0;
+    }
+
+    .section-ratings header h1 {
+        font-size: 2.75rem;
+        line-height: 2.75rem;
+    }
+
+    .section-ratings .rating {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .rating-stars{
+        margin: 0 2rem;
+    }
+
     .rating figcaption {
         margin: 0;
     }
 
-    .rating-stars {
-        margin-left: 2rem;
+    .section-testimonials {
+        margin-top: 1rem;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        height: 260px;
     }
 
-    .rating figcaption {
-        margin-right: 2rem;
+    .card {
+        padding: 2rem;
+        height: 230px;
+        width: unset;
+        max-width: 28ch;
+    }
+
+    .card.colton {
+        align-self: flex-start;
+    }
+
+    .card.irene {
+        align-self: center;
+    }
+
+    .card.anne {
+        align-self: flex-end;
     }
 
     .card .testimonial {
-        
+        font-size: .8rem;
+        width: unset;
     }
 }
+
 
 .attribution {
   font-size: 11px;
